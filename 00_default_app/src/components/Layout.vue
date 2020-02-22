@@ -1,8 +1,14 @@
 <template>
-    <div class="box">
-        <slot name="left"></slot>
-        <slot name="center"></slot>
-        <slot name="right"></slot>
+    <div class="layout-box">
+        <div class="inner-wrapper left">
+            <slot name="left"></slot>
+        </div>
+        <div class="inner-wrapper center">
+            <slot name="center"></slot>
+        </div>
+        <div class="inner-wrapper right">
+            <slot name="right"></slot>
+        </div>
     </div>
 </template>
 
@@ -12,9 +18,20 @@ export default {
 }
 </script>
 
-<style>
-.box {
+<style scoped>
+.layout-box {
     display : flex;
     justify-content : space-between;
+}
+.inner-wrapper {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+}
+.left {
+    margin-right: auto;
+}
+.right {
+    margin-left: auto;
 }
 </style>

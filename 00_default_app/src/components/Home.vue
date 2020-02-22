@@ -1,14 +1,17 @@
 <template>
   <div class="outside-box">
+    <div class="box">
+      <div class="item center normal-wide">center</div>
+    </div>
     <Layout>
       <template v-slot:left>
-        <div class="item left">left</div>            
+        <div class="item left normal-wide">left</div>
       </template>
       <template v-slot:center>
-        <div class="item center">center</div>
+        <div class="item center normal-wide">center</div>
       </template>
       <template v-slot:right>
-        <div class="item right">right</div>
+        <div class="item right more-wide">right</div>
       </template>
     </Layout>
   </div>
@@ -25,10 +28,14 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .outside-box {
     width: 400px;
     margin: 0 auto;
+}
+.box {
+    display : flex;
+    justify-content : center;
 }
 .item {
     padding: 2px 10px;
